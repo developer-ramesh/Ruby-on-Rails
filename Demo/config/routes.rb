@@ -15,8 +15,7 @@ Rails.application.routes.draw do
   
    post 'articles/test' => 'articles#test'
    
-   get 'articles/hello' => 'articles#hello'
-  
+   get 'articles/hello' => 'articles#fileContent'
   
    
 

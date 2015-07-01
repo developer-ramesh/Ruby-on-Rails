@@ -27,3 +27,26 @@
   <% end %>
   
 </table>
+
+<a href="javascript:void();" class="aj">Ajax</a>
+
+<script type="text/javascript">
+jQuery(function($){
+  $('.aj').click(function(){
+    
+   $.ajax({
+                 url: "/articles", // Route to the Script Controller method
+                type: "GET",
+             success: function(data, textStatus, xhr) {
+                       console.log(data);
+                       console.log(textStatus);
+                       console.log(xhr);
+                      },
+               error: function() {
+                        alert("Ajax error!")
+                      }
+    });
+  
+  });
+});
+</script>

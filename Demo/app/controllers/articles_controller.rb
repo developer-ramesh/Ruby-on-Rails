@@ -4,7 +4,11 @@ class ArticlesController < ApplicationController
      @articles = Article.all
     #render :text => @articles.inspect
     #render :json => session
-
+    if request.xhr?
+        render :json => {
+                            :file_content =>  @articles
+                        }
+    end
   end
   def show
     @article = Article.find(params[:id])
@@ -48,10 +52,12 @@ class ArticlesController < ApplicationController
     render :json => session
   end
   
-  def hello
+  def fileContent
     @articles = Article.all
     respond_to do |format|
-        format.js {}
+        render :json => {
+                            :file_content => @articles
+                        }
     end
   end
   
