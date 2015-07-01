@@ -1,0 +1,28 @@
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
+ 
+<p>
+  <strong>Text:</strong>
+  <%= @article.text %>
+</p>
+
+<%= link_to 'My Blog', controller: 'articles' %>
+<%= link_to 'New article', new_article_path %>
+
+
+<h2>Comments</h2>
+
+<%= render @article.comments %>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+ 
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>
+
+<%= form_for :@article, url: '/articles/test/' do |f| %>
+  <input type="text" name="kk">
+  <input type="submit" name="raaa" value="sen">
+<% end %>

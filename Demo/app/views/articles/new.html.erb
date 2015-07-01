@@ -1,0 +1,29 @@
+<h1>New article!!!</h1>
+
+
+<% content_for :header do %>
+ <h1>Welcome to Ruby!!!</h1>
+<% end %>
+
+<%= link_to "Home", root_path %>
+ 
+<%= render 'form' %>
+ 
+<%= link_to 'Back', articles_path %>
+
+
+<% content_for :footer do %>
+   <p>This content will show up in the footer section </p>
+<% end %>
+
+
+<%= link_to "hello", { :controller => "articles", :action => "hello" }, :remote => true %>
+
+
+
+
+
+
+
+
+
