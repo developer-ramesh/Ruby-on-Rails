@@ -38,6 +38,7 @@ jQuery(function($){
                  url: "/articles", // Route to the Script Controller method
                 type: "GET",
              success: function(data, textStatus, xhr) {
+                       alert(xhr);
                        console.log(data);
                        console.log(textStatus);
                        console.log(xhr);
