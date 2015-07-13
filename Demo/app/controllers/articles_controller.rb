@@ -17,6 +17,7 @@ class ArticlesController < ApplicationController
   
   def new
     @article = Article.new
+    @articles = Article.all
   end
   
   def edit
@@ -34,12 +35,13 @@ class ArticlesController < ApplicationController
   end
   
   def create
-  @article = Article.new(article_params)
-    if @article.save
-      redirect_to @article
-    else
-      render 'new'
-    end
+   render :text => article_params
+    #@article = Article.new(article_params)
+    #if @article.save
+    #   redirect_to @article
+    #else
+    #    render 'new'
+    #end
   end
   
   def destroy
@@ -47,10 +49,6 @@ class ArticlesController < ApplicationController
     @article.destroy
    
     redirect_to articles_path
-  end
-  
-  def test
-    render :json => session
   end
   
   def fileContent

@@ -14,6 +14,7 @@
     </div>
   <% end %>
  
+ 
   <p>
     <%= f.label :title %><br>
     <%= f.text_field :title %>
@@ -23,6 +24,29 @@
     <%= f.label :text %><br>
     <%= f.text_area :text %>
   </p>
+  
+  <p>
+   <%= f.collection_select :id, @articles, :id, :title, include_blank: '--choose--' %>
+  </p>
+  
+  <p>
+    <%= select_tag 'stores[]', options_from_collection_for_select(@articles, :id, :title, [4,5,6]), multiple: true, size: '10%' %>
+  </p>
+  
+  
+  
+  
+  <select name="article[mul]" id="article_mul" multiple="multiple">
+        <option value="1">abc</option>
+        <option value="31">789</option>
+  </select>
+  
+  
+  <script>
+        $("select").multipleSelect({
+            filter: true
+        });
+  </script>
  
   <p>
     <%= f.submit %>

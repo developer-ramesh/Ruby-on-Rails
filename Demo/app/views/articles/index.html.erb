@@ -1,4 +1,5 @@
 <h1>Hello, Rails!</h1>
+
 <%= link_to 'My Blog', controller: 'articles' %>
 
 <%= link_to 'New article', new_article_path %>
@@ -33,21 +34,19 @@
 <script type="text/javascript">
 jQuery(function($){
   $('.aj').click(function(){
-    
    $.ajax({
-                 url: "/articles", // Route to the Script Controller method
-                type: "GET",
-             success: function(data, textStatus, xhr) {
-                       alert(xhr);
-                       console.log(data);
-                       console.log(textStatus);
-                       console.log(xhr);
-                      },
-               error: function() {
-                        alert("Ajax error!")
-                      }
+          url: "/articles", // Route to the Script Controller method
+          type: "GET",
+          success: function(data, textStatus, xhr) {
+            alert(xhr);
+            console.log(data);
+            console.log(textStatus);
+            console.log(xhr);
+          },
+          error: function() {
+            alert("Ajax error!")
+          }
     });
-  
   });
 });
 </script>
